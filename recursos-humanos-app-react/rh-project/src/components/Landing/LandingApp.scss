@@ -1,0 +1,18 @@
+.row-padre-landing {
+  background-image: url("../../../public/images/tyler-franta-iusJ25iYu1c-unsplash.jpg");
+  height: calc(100vh - 80px);
+  background-size: cover;
+  background-position: center;
+  border-image: fill 0 linear-gradient(#0001, #000);
+
+  .col-hijo-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: clamp(2rem, 5vw + 1rem, 6rem);
+      color: #0179b7;
+    }
+  }
+}

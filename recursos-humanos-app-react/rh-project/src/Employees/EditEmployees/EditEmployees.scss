@@ -1,0 +1,27 @@
+.padre-formulario-editar-empleados {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../../../public/images/tyler-franta-iusJ25iYu1c-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  border-image: fill 0 linear-gradient(#000, #0001);
+  font-weight: bold;
+  color: white;
+  label {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  button {
+    font-weight: bold;
+  }
+
+  h2 {
+    color: #0179b7;
+    font-weight: bold;
+    font-size: clamp(2rem, 50%, 10rem);
+  }
+}
