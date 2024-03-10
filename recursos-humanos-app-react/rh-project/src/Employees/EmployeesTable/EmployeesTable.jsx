@@ -7,6 +7,8 @@ import "./EmployesTable.scss";
 
 export const EmployeesTable = ({ allEmployeesFilter, setRender }) => {
   //Estado que maneja la vista del modal de confirmación
+
+  // Cuando son variables que quieren simbolizar la apertura de un modal se suele poner tipo openDeleteModal o algo así
   const [showDelete, setShowDelete] = useState(false);
 
   //Estado que almacena la ID de un empleado a eliminar
@@ -21,6 +23,7 @@ export const EmployeesTable = ({ allEmployeesFilter, setRender }) => {
 
   return (
     <>
+      {/* Muy guay esta forma de hacerlo en vez de ternarios tío, yo eso lo aprendí ya currando, guay que se te ocurra */}
       {showDelete && (
         <DeleteEmployee
           setShowDelete={setShowDelete}
@@ -32,6 +35,7 @@ export const EmployeesTable = ({ allEmployeesFilter, setRender }) => {
       )}
       {allEmployeesFilter && allEmployeesFilter[0] !== null && (
         <Table striped bordered hover size="xs">
+          {/* Todas las partes de la tabla las componentizaría, el head, body, las rows */}
           <thead>
             <tr>
               <th className="columna-name">Name</th>

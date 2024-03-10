@@ -18,6 +18,8 @@ export const EditEmployees = () => {
       console.log(urlGetEmployee + employee_id);
       axios
         .get(urlGetEmployee + employee_id)
+        // Esta guay usar el destructurin en estos casos para no ir arrastrando los variable.key
+        //   se podría poner {data } en  vez de resultado
         .then((resultado) => {
           setInfoEmployee(resultado.data);
         })
@@ -29,6 +31,8 @@ export const EditEmployees = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // Me gusta mucho también lo de crear keys dinámicas, es muy guay, también lo aprendí tarde.
+    // Me está encantando porque me estás soprendiendo tío.
     setInfoEmployee({ ...infoEmployee, [name]: value });
   };
 
@@ -44,7 +48,19 @@ export const EditEmployees = () => {
         console.log(error);
       });
   };
-
+  // Para todos los usos de las keys de infoEmployee se puede hacer destructuring tambien
+  // de la siguiente forma
+  // const { nombre, departamento, sueldo, } = infoEmployee; 
+  // y usas las variables solas
+  
+  
+  // En realidad, este componente no termino de entenderlo.Si le das al botón click navega a una página diferente de la de la tabla
+  // y en la carga de este componente hace una llamada al back para traer los mismos datos del empleado que ya tiene en la tabla.
+  // Puedes hacer una cosa que se llama rowExpansion que lo que hace es expandir la fila hacia abajo y muestra el componente de edición si quieres.
+  // Si no te gusta esta solución porque visualmente prefieres la tuya, haz el routing pero pásale los parámetros por la url si quieres o almacénalos en el context y cógelos en el otro sitio,
+  // asi te acostumbras a ahorrar llamadas duplicadas a apis
+  
+  
   return (
     <Row>
       <Form className="padre-formulario-editar-empleados">

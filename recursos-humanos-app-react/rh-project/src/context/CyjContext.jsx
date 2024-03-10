@@ -22,6 +22,7 @@ export const CyjProvider = ({ children }) => {
       .then((res) => {
         setEmployees(res.data);
         setAllEmployeesFilter(res.data);
+        // No entiendo bien por pones este setRender, vas a hacer que renderice de nuevo, puede que sea interminable no??
         setRender(false);
       })
       .catch((error) => console.log(error));

@@ -52,6 +52,7 @@ export const Employees = () => {
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               Search by: {selectedOption === "nombre" ? "Name" : "Department"}
             </Dropdown.Toggle>
+            {/* El dropDown lo podrías sacar a un componente aparte y poner las opciones como un array por si más adelante quieres añadir más */}
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => handleDropdownChange("nombre")}>
                 Name
